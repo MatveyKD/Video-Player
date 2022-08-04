@@ -12,19 +12,29 @@
       cursor: pointer;
     }
 
+    .menu{
+      background: black;
+    }
+
     .player{
+      display: flex;
+      flex-direction: column;
       width: 800px;
       height: 600px;
       box-shadow: 0 0 5px 2px;
     }
 
+    .js-video-container{
+      width: 100%;
+      height: 100%;
+    }
+
   </style>
-</head>
 </head>
 <body>
   <div class="player" id="player">
-    <div class="js-video-container" style="width: 100%; height: 100%"></div>
-    <div style="background: black;">
+    <div class="js-video-container"></div>
+    <div class="menu">
       <button class="js-play-button"><i class="fa fa-play" aria-hidden="true"></i></button>
       <button class="js-pause-button"><i class="fa fa-pause" hidden aria-hidden="true"></i></button>
     </div>
