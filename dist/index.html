@@ -1,70 +1,73 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>Пример подключения плеера</title>
-  <link rel="stylesheet" href="font-awesome-4.7.0\css\font-awesome.min.css"><link>
-  <meta charset="utf-8">
-  <style type="text/css">
-    button{
-      color: white;
-      background-color: transparent;
-      border-style: none;
-      cursor: pointer;
-    }
+  <head>
+    <title>Пример подключения плеера</title>
+    <link rel="stylesheet" href="font-awesome-4.7.0\css\font-awesome.min.css"><link>
+    <meta charset="utf-8">
+    <style type="text/css">
+      button{
+        color: white;
+        background-color: transparent;
+        border-style: none;
+        cursor: pointer;
+      }
 
+      .js-play-button{
+        font-size: 20px;
+        padding: 10px;
+      }
+      .js-pause-button{
+        font-size: 20px;
+        padding: 10px;
+      }
+      .js-volume-button{
+        font-size: 20px;
+        padding: 10px;
+      }
+      .js-mute-button{
+        font-size: 20px;
+        padding: 10px;
+      }
 
-    .js-play-button{
-      font-size: 20px;
-    }
-    .js-pause-button{
-      font-size: 20px;
-    }
-    .js-volume-button{
-      font-size: 20px;
-    }
-    .js-mute-button{
-      font-size: 20px;
-    }
+      .menu{
+        background: black;
+      }
 
-    .menu{
-      background: black;
-    }
+      .player{
+        display: flex;
+        flex-direction: column;
+        width: 800px;
+        height: 600px;
+        box-shadow: 0 0 5px 2px;
+      }
 
-    .player{
-      display: flex;
-      flex-direction: column;
-      width: 800px;
-      height: 600px;
-      box-shadow: 0 0 5px 2px;
-    }
+      .js-video-container{
+        width: 100%;
+        height: 100%;
+      }
 
-    .js-video-container{
-      width: 100%;
-      height: 100%;
-    }
+    </style>
+  </head>
+  <body>
+    <div class="player" id="player">
+      <div class="js-video-container"></div>
+      <div class="menu">
+        <button class="js-play-button"><i class="fa fa-play" aria-hidden="true"></i></button>
+        <button class="js-pause-button"><i class="fa fa-pause" hidden aria-hidden="true"></i></button>
 
-  </style>
-</head>
-<body>
-  <div class="player" id="player">
-    <div class="js-video-container"></div>
-    <div class="menu">
-      <button class="js-play-button"><i class="fa fa-play" aria-hidden="true"></i></button>
-      <button class="js-pause-button"><i class="fa fa-pause" hidden aria-hidden="true"></i></button>
+        <button class="js-volume-button"><i class="fa fa-volume-off" hidden aria-hidden="true"></i></button>
+        <button class="js-mute-button"><i class="fa fa-volume-up" aria-hidden="true"></i></button>
+      </div>
 
-      <button class="js-volume-button"><i class="fa fa-volume-off" hidden aria-hidden="true"></i></button>
-      <button class="js-mute-button"><i class="fa fa-volume-up" aria-hidden="true"></i></button>
+      <!-- Here can be placed player controls: play and volume buttons -->
     </div>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://unpkg.com/playable@2.10.3/dist/statics/playable.bundle.min.js"></script>
+    <script src="player.js"></script>
 
-    <!-- Here can be placed player controls: play and volume buttons -->
-  </div>
-  <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-  <script src="https://unpkg.com/playable@2.10.3/dist/statics/playable.bundle.min.js"></script>
-  <script src="player.js"></script>
+    <script type="text/javascript">
+      createPlayer({elementId: 'player'});
+    </script>
 
-  <script type="text/javascript">
-    createPlayer({elementId: 'player'});
-  </script>
-
-</body>
+  </body>
 </html>
