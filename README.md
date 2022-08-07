@@ -1,5 +1,5 @@
 # Video-Player
-Онлайн видео-плеер
+Онлайн видео-плеер. Ссылка на сайт: https://matveykd.github.io/Video-Player/dist/
 
 ## Как запустить
 
