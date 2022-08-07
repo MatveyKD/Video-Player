@@ -2,7 +2,7 @@
 <html>
   <head>
     <title>Пример подключения плеера</title>
-    <link rel="stylesheet" href="./font-awesome-4.7.0\css\font-awesome.min.css"><link>
+    <link rel="stylesheet" href="../font-awesome-4.7.0\css\font-awesome.min.css"><link>
     <meta charset="utf-8">
     <link rel="icon" href="./favicon.ico">
     <style type="text/css">
@@ -13,22 +13,7 @@
         cursor: pointer;
       }
 
-      .js-play-button{
-        font-size: 20px;
-        padding: 10px;
-        flex-grow: 1;
-      }
-      .js-pause-button{
-        font-size: 20px;
-        padding: 10px;
-        flex-grow: 1;
-      }
-      .js-volume-button{
-        font-size: 20px;
-        padding: 10px;
-        flex-grow: 1;
-      }
-      .js-mute-button{
+      .button{
         font-size: 20px;
         padding: 10px;
         flex-grow: 1;
@@ -62,14 +47,14 @@
     <div class="player" id="player">
       <div class="js-video-container"></div>
       <div class="menu">
-        <button class="js-play-button"><i class="fa fa-play" aria-hidden="true"></i></button>
-        <button class="js-pause-button"><i class="fa fa-pause" hidden aria-hidden="true"></i></button>
+        <button class="js-play-button button"><i class="fa fa-play" aria-hidden="true"></i></button>
+        <button class="js-pause-button button"><i class="fa fa-pause" hidden aria-hidden="true"></i></button>
 
-        <button class="js-volume-button"><i class="fa fa-volume-off" hidden aria-hidden="true"></i></button>
-        <button class="js-mute-button"><i class="fa fa-volume-up" aria-hidden="true"></i></button>
+        <button class="js-volume-button button"><i class="fa fa-volume-off" hidden aria-hidden="true"></i></button>
+        <button class="js-mute-button button"><i class="fa fa-volume-up" aria-hidden="true"></i></button>
 
         <div class="menu-indent"></div>
-        <button class="js-fullscreen-button"><i class="fa fa-expand" aria-hidden="true"></i></i></button>
+        <button class="js-fullscreen-button button"><i class="fa fa-expand" aria-hidden="true"></i></i></button>
       </div>
 
       <!-- Here can be placed player controls: play and volume buttons -->
