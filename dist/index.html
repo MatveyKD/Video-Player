@@ -84,10 +84,21 @@
         align-items: center;
         background-color: black;
         margin-right: 4px;
+        flex-direction-row;
       }
       .progressbar.slider{
         background-color: #f8104d;
         border-radius: 2px;
+      }
+
+      .dot{
+        height: 7px;
+        width: 7px;
+        background-color: #f8104d;
+        border-radius: 50%;
+        border: 3px solid white;
+        display: inline-block;
+        margin-left: -8px;
       }
     </style>
   </head>
@@ -105,6 +116,7 @@
 
         <div class="progressbar progress js-progress">
           <div class="progressbar slider js-progress-slider"></div>
+          <div class="dot"></div>
         </div>
         <div class="right-buttons">
           <div class="veiwing-numbers video-duration" style="color: white;">
