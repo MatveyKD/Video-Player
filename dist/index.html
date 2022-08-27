@@ -2,7 +2,7 @@
 <html>
   <head>
     <title>Пример подключения плеера</title>
-    <link rel="stylesheet" href="./font-awesome-4.7.0\css\font-awesome.min.css"><link>
+    <link rel="stylesheet" href="./font-awesome-4.7.0/css/font-awesome.min.css"><link>
     <meta charset="utf-8">
     <link rel="icon" href="./favicon.ico">
     <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
@@ -19,18 +19,32 @@
         height: 43px;
       }
 
-      .viewing-panel{
-        font-family: 'Roboto', sans-serif;
+      .player-button.volume{
+        margin-left: 5px;
+      }
+      .player-button.fullscreen{
+        margin-right: 7px;
       }
 
       .menu-indent{
         flex-grow: 100;
       }
-
+      .left-buttons{
+       display: flex;
+       flex-direction: row;
+       align-items: center;
+      }
+      .right-buttons{
+       display: flex;
+       flex-direction: row;
+       align-items: center;
+      }
       .menu{
         background: black;
         display: flex;
         flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
       }
 
       .player{
@@ -46,15 +60,34 @@
         height: 100%;
       }
 
-      .viewing-time{
+      .veiwing-numbers.viewing-time{
         margin-left: 6px;
-        margin-top: 11px;
       }
-      .video-duration{
-        margin-left: 583px;
-        margin-top: 12px;
+      .veiwing-numbers.video-duration{
+        margin-left: 10px;
+      }
+      .veiwing-numbers{
+        font-family: 'Roboto', sans-serif;
+        font-size: 16px;
       }
 
+      .viewing-time{
+      color: white; background-color: black;
+      }
+      .progressbar{
+        height: 6px;
+        margin-left: 4px;
+      }
+      .progressbar.progress{
+        display: flex;
+        flex: 1 1 100%;
+        align-items: center;
+        background-color: black;
+        margin-right: 4px;
+      }
+      .progressbar.slider{
+        background-color: #f8104d;
+      }
     </style>
   </head>
   <body>
@@ -62,26 +95,21 @@
       <div class="js-video-container video-container"></div>
       <div class="menu">
         <div class="left-buttons">
-          <button class="js-play-button player-button"><i class="fa fa-play" aria-hidden="true"></i></button>
-          <button class="js-pause-button player-button"><i class="fa fa-pause" hidden aria-hidden="true"></i></button>
-          <button class="js-volume-button player-button"><i class="fa fa-volume-off" hidden aria-hidden="true"></i></button>
-          <button class="js-mute-button player-button"><i class="fa fa-volume-up" aria-hidden="true"></i></button>
+          <button class="js-play-button player-button play"><i class="fa fa-play" aria-hidden="true"></i></button>
+          <button class="js-pause-button player-button play"><i class="fa fa-pause" hidden aria-hidden="true"></i></button>
+          <button class="js-volume-button player-button volume"><i class="fa fa-volume-off" hidden aria-hidden="true"></i></button>
+          <button class="js-mute-button player-button volume"><i class="fa fa-volume-up" aria-hidden="true"></i></button>
+          <span class="veiwing-numbers viewing-time js-current-time" ></span>
         </div>
 
-        <div class="viewing-panel" style="color: white; background-color: black; display:flex">
-          <div class="viewing-time">
-            <span class="js-current-time"></span>
-          </div>
-          <div class="viewing-progressbar"></div>
-          <div class="video-duration">
+        <div class="progressbar progress js-progress">
+          <div class="progressbar slider js-progress-slider"></div>
+        </div>
+        <div class="right-buttons">
+          <div class="veiwing-numbers video-duration" style="color: white;">
             <span class="js-duration"></span>
           </div>
-        </div>
-
-        <div class="menu-indent"></div>
-
-        <div class="right-buttons">
-          <button class="js-fullscreen-button player-button"><i class="fa fa-expand" aria-hidden="true"></i></i></button>
+          <button class="js-fullscreen-button player-button fullscreen"><i class="fa fa-expand" aria-hidden="true"></i></i></button>
         </div>
       </div>
 
