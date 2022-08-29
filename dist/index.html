@@ -84,7 +84,6 @@
         align-items: center;
         background-color: black;
         margin-right: 4px;
-        flex-direction-row;
       }
       .progressbar.slider{
         background-color: #f8104d;
@@ -99,6 +98,13 @@
         border: 3px solid white;
         display: inline-block;
         margin-left: -8px;
+        opacity: 0;
+
+        transition-property: opacity;
+        transition-duration: 300ms;
+      }
+      .progressbar.progress:hover > .dot{
+        opacity: 1;
       }
     </style>
   </head>
