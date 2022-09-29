@@ -10,21 +10,18 @@
     <style type="text/css">
       .player-button{
         font-size: 20px;
-        padding: 8px;
         flex-grow: 1;
         color: white;
         background-color: transparent;
         border-style: none;
         cursor: pointer;
-        width: 31px;
-        height: 43px;
+        width: 37px;
+        height: 29px;
       }
 
-      .player-button.volume{
-        margin-left: 5px;
-      }
+
       .player-button.fullscreen{
-        margin-right: 7px;
+        margin-right: -1px;
       }
 
       .menu-indent{
@@ -44,6 +41,7 @@
         background: black;
         display: flex;
         flex-direction: row;
+        flex-grow: 1;
         align-items: center;
         justify-content: space-between;
       }
@@ -57,38 +55,37 @@
       }
 
       .video-container{
-        width: 100%;
-        height: 100%;
+        flex-grow: 100;
       }
 
-      .veiwing-numbers.viewing-time{
-        margin-left: 6px;
-      }
-      .veiwing-numbers.video-duration{
-        margin-left: 10px;
-      }
       .veiwing-numbers{
         font-family: 'Roboto', sans-serif;
         font-size: 16px;
       }
 
       .viewing-time{
-        color: white; background-color: black;
+        color: white;
+        background-color: black;
       }
       .progressbar{
-        height: 6px;
-        margin-left: 4px;
-      }
-      .progressbar.progress{
         display: flex;
         flex: 1 1 100%;
         align-items: center;
+        margin-left: 2px;
+        justify-content: space-between;
+      }
+      .progress{
+        display: flex;
+        height: 6px;
+        flex: 1 1 100%;
         background-color: black;
         margin-right: 4px;
       }
-      .progressbar.slider{
+      .slider{
+        height: 5px;
         background-color: #f8104d;
-        border-radius: 2px;
+        border-radius: 3px;
+        margin-left: 10px;
       }
 
       .dot{
@@ -99,12 +96,13 @@
         border: 3px solid white;
         display: inline-block;
         margin-left: -8px;
+        margin-top: -6px;
         opacity: 0;
 
         transition-property: opacity;
         transition-duration: 300ms;
       }
-      .progressbar.progress:hover > .dot{
+      .progressbar:hover .dot{
         opacity: 1;
       }
     </style>
@@ -118,19 +116,23 @@
           <button class="js-pause-button player-button play"><i class="fa fa-pause" hidden aria-hidden="true"></i></button>
           <button class="js-volume-button player-button volume"><i class="fa fa-volume-off" hidden aria-hidden="true"></i></button>
           <button class="js-mute-button player-button volume"><i class="fa fa-volume-up" aria-hidden="true"></i></button>
-          <span class="veiwing-numbers viewing-time js-current-time" ></span>
         </div>
+        <div class="progressbar">
+            <span class="veiwing-numbers viewing-time js-current-time" ></span>
+        <div class="progress js-progress">
 
-        <div class="progressbar progress js-progress">
-          <div class="progressbar slider js-progress-slider"></div>
+          <div class="slider js-progress-slider"></div>
           <div class="dot"></div>
+
         </div>
-        <div class="right-buttons">
-          <div class="veiwing-numbers video-duration" style="color: white;">
+            <div class="veiwing-numbers video-duration" style="color: white;">
             <span class="js-duration"></span>
           </div>
+        </div>
+        <div class="right-buttons">
           <button class="js-fullscreen-button player-button fullscreen"><i class="fa fa-expand" aria-hidden="true"></i></button>
         </div>
+
       </div>
 
       <!-- Here can be placed player controls: play and volume buttons -->
